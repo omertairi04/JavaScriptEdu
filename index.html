@@ -13,12 +13,15 @@
     /*
         const X= nuk mundemi me ndryshu X
         let Y = mundemi ta ndryshojm Y
+
     */
 
-    // let emri = "Omer"; // string
+    let shkolla = "Finki"; // string
     let vitet = 20; // int (integer) numer i plot
     let gjatesija = 1.70; // float ose double
     let pesha = 68.7;
+    let eshtStudent = true // Omer-i esht student kjo esht e vertet
+    let kaVizituarEgjiptin = false // nuk e kam visituar 
     
     /*
     console.log(3 + 4); // shfaq/outputs = 7
@@ -43,11 +46,18 @@
     let emri = "Omer";
     let mbiemri = "Tairi";
 
-    let emriPlot = emri + " " + mbiemri;
+    let emriPlot = emri + " " + mbiemri; // emri plot bashkon Omer Tairi me hapsir nmes "Omer Tairi"
     console.log(emriPlot);
         
 
-    console.log("Gjatesija e emrit: " + emri.length);
+    console.log("Gjatesija e emrit: " + emri.length); // jep gjatesin e variables emri
+
+    console.log(emriPlot.startsWith("Ome")); // na jep true, pershkak se Omer Tairi fillon me "Ome"
+    console.log(emriPlot.startsWith("OME")); // na jep false, pershkak se Omer Tairi nuk fillon me "OME"
+
+
+
+    
     
 
 </script>
