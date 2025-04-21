@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+/*
+    let temperature = 10
+
+    if(temperature <=5){
+        console.log("Too cold");
+        
+    }else if(temperature >=6 && temperature <=25 ) {
+        console.log("nice");
+        
+    }else{
+        console.log("too hot");
+        
+    }
+        */
+
+    let num = 12;
+
+    if (num % 2 == 0) {
+        console.log("ESHTE CHift");
+    }
+
+    if (num % 2 != 0) {
+        console.log("ESHTE TEK");
+    }
+
+
+    /*
+    G = GURI
+    L = LETER
+    S = Gershere
+
+    dora1 = mund te zgedhe vetem njeren prej ketyre (G ose L ose S)
+    dora2 = mund te zgedhe vetem njeren prej ketyre (G ose L ose S)
+    
+    dora1 = "G" ose "L" ose "S"
+    dora2 = "G" ose "L" ose "S"
+                           
+    shembull:
+    let dora1 = "G";
+    let dora2 = "S";
+
+    1)  dora1 === "G" edhe dora2 === "S" -> "dora1 fiton"
+    2)  dora1 === "L" edhe dora2 === "G" -> "dora1 fiton"
+    3)  dora1 === "S" edhe dora2 === "L" -> "dora1 fiton"
+
+    4) dora2 === "G" edhe dora1 === "S" -> "dora2 fiton"
+    5) dora2 === "L" edhe dora1 === "G" -> "dora2 fiton"
+    6) dora2 === "S" edhe dora1 === "L" -> "dora2 fiton"
+
+    7) "BARAZ"
+    */
+
+    let dora1 = "G"
+    let dora2 = "G"
+
+    if (dora1 === "G" && dora2 === "S") {
+        console.log("Dora 1 fiton");
+    } else if (dora1 === "L" && dora2 === "G") {
+        console.log("Dora 1 fiton");
+    } else if (dora1 === "S" && dora2 === "L") {
+        console.log("Dora 1 fiton");
+    } else if (dora2 === "G" && dora1 === "S") {
+        console.log("Dora 2 fiton");
+    } else if (dora2 === "L" && dora1 === "G") {
+        console.log("Dora 2 fiton");
+    } else if (dora2 === "S" && dora1 === "L") {
+        console.log("Dora 2 fiton");
+    } else {
+        console.log("BARAZ");
+    }
+
+</script>
+</html>

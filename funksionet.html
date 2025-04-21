@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+// Area of the first rectangle
+const width1 = 10;
+const height1 = 6;
+const area1 = width1 * height1;
+
+// Area of the second rectangle
+const width2 = 4;
+const height2 = 9;
+const area2 = width2 * height2;
+
+// Area of the third rectangle
+const width3 = 10;
+const height3 = 10;
+const area3 = width3 * height3;
+
+/*
+function getArea (width , height)  {
+    area = width * height
+}
+
+let area1 = getArea(10,6) -> 60
+let area2 = getArea(4,9)
+let area3 = getArea(10,10)
+
+*/
+
+function greetWorld() {
+    console.log("Hello World 23123213");
+}
+
+// greetWorld()
+
+function getArea(width, height) {
+    const area = width * height;
+    // console.log("Area is ", area);
+}
+
+const area = getArea(10,6);
+const area_2 = getArea(4,9)
+let area_3 = getArea(10,10)
+
+
+function multByTwo(num) {
+    console.log(num * 2)
+}
+
+// multByTwo(2)
+// multByTwo(100)
+
+function multWithEachOther(num1=5, num2=5) {
+    return num1 * num2;
+}
+
+const mult = multWithEachOther();
+console.log(mult);
+
+
+// function divWithEachOther(num1, num2=1) {
+//     return num1 / num2;
+// }
+
+// divWithEachOther(10)
+
+const divWithEachOther = (num1, num2=1) => {
+    return num1 / num2;
+}
+
+
+const div = divWithEachOther(5 , 2)
+console.log(div);
+
+
+// const name = function ("Omer") -> "Hello, Omer"
+
+function greetPerson (name) {
+    console.log("Hello," + name + " dhe jam ___");
+}
+
+greetPerson("Omer")
+greetPerson("Avdi")
+greetPerson("Ertan")
+greetPerson("Jusuf")
+
+
+/*
+    aboutMe
+    Un quhen *emri* dhe i kam *x* vite, pas 1 viti do jem *x+1* vite
+
+    
+*/
+
+
+function aboutMe(emri, vitet, y) {
+    const vitet1 = vitet + y;
+    console.log("Un quhem " + emri + " dhe i kam " + vitet + " vite, pas "+ y +" vite do jem " + vitet1 +" vite");
+    
+}
+
+// console.log("Un quhem " + emri + " dhe i kam " + vitet + " vite, pas *y* viteve do jem " + (vitet + y) +" vite");
+
+// aboutMe("Omer" , 20 , 10)
+
+function numInKatror(x, n) {
+    console.log(x ** n);
+    
+}
+
+// numInKatror(2,4)
+
+
+
+
+
+</script>
+</html>
