@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        //INDEX:      0         1
+    const fruits = ["Banane", "Molla"];
+    // console.log(fruits[0], fruits[1]);
+
+    const portokalli = "Portokalli";
+    fruits.push(portokalli);
+    fruits.push("Ananas")
+    
+    /*                        0          1         2          3
+            const fruits = ["Banane", "Molla", "Portokall","Ananas"];
+
+    */
+
+    // variable = arr[index]
+    const tt = fruits[4]
+    console.log("TT IS: ", tt);
+    
+
+    for (let fruit=0;fruit<fruits.length;fruit++) {
+        console.log(fruits[fruit]);
+    }
+
+    console.log("-------------------------");
+
+
+    fruits[2] = "Mandarin"
+
+    for (let i=0;i<fruits.length;i++) {
+        console.log(fruits[i]);
+        
+    }
+    console.log("-------------------------");
+    
+
+    fruits.pop()
+
+    /*                        0          1         2      
+            const fruits = ["Banane", "Molla", "Portokall"];
+
+    */
+
+            //        i < 3
+    for (let i=0;i<fruits.length;i++) {
+        console.log(fruits[i]); 
+        /*
+            KUR:
+            i=0: Banane
+            i=1: Molla
+            i=2: Portokall
+        */
+    }
+
+    /*
+        join()
+    */
+    console.log("-------------------------");
+
+    let text = fruits.join(" edhe ");
+    console.log(text);
+    
+    console.log("-------------------------");
+    //                 0         1          2            3       4          5          6        7     8
+    const ushqime = ["Pizza", "Hamburger", "Hot Dog", "Fli", "Portokall", "Moll","Mandarin", "Spec","Kompir"];
+    const fastFood = ushqime.slice(0, 4);
+    console.log(fastFood.join());
+    const frutat = ushqime.slice(4, 7);
+    console.log(frutat.join(" EDHE "));
+    const perimet = ushqime.slice(7)
+    console.log(perimet.join());
+    
+
+    function addElement(arr, element) {
+        arr.push(element)
+    }
+
+    addElement(ushqime, "Durum");
+    console.log(ushqime.join());
+    
+    const kerra = ["BMW","MERCEDES","AUDI"];
+    addElement(kerra, "Toyota");
+    console.log(kerra.join());
+
+</script>
+</html>
