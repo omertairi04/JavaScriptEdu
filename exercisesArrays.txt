@@ -1,0 +1,16 @@
+Sum of Even Numbers
+    Given an array of numbers, print the sum of only the even ones.
+
+Find the Largest Number
+    Loop through an array and print the largest number.
+
+Count Positives and Negatives
+    Count how many numbers in the array are positive and how many are negative.
+
+Print Numbers Greater than 10
+    Print all numbers in the array that are greater than 10.
+
+Double All Elements
+    Create a new array where each element is double the value of the original array.
+
+    
