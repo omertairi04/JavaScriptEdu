@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    const person = {
+        emri : "Omer",
+        mbiemri : "Tairi",
+        // vitet : 20
+        hobbies () {
+            console.log("Gaming", "Coding");
+        }
+    }
+
+    let emriPersonit = person.emri;
+    const mbiemriPersonit = person.mbiemri
+    // console.log(emriPersonit + " " + mbiemriPersonit);
+    
+    person.vitet = "20";
+    // console.log(person.vitet);
+    
+    // person.hobbies();
+
+    const BMW = {
+        model : "M4",
+        viti : "2025",
+        motorri : {
+            litra : "3.0",
+            kuajFuqi : "550",
+            prodhuar: "Austri"
+        },
+        prodhuar : "Gjermani"
+    }
+
+    console.log(BMW.prodhuar);
+
+    // for (key in BMW) {
+    //     console.log(`${key}: ${BMW[key]}`);
+    // }
+
+    for (key in BMW) {
+        console.log(`${key}: ${BMW[key]}`);
+        
+    }
+
+    
+
+</script>
+</html>

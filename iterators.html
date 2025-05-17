@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    const array = [];
+    /*
+    for (let num=0;num<arr.length;num++) {
+        console.log(arr[num]);
+    }
+    */
+
+    for (let i=0;i<=15;i++) {
+        array.push(i);
+    }
+
+    array.forEach((num) => {
+
+        // if (num % 2 === 0) {
+        //     console.log(num," eshte cift ");
+        // } else {
+        //     console.log(num, " eshte tek ");
+            
+        // }
+    })
+
+    const arr = [1,2,3,4];
+    
+    const plus2 = arr.map(i => i+=2);
+
+    const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door'];
+
+    const shortWords = words.filter((i) => {
+        return i.length < 6;
+    })
+
+    console.log(shortWords.join());
+    
+
+</script>
+</html>

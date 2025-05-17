@@ -14,3 +14,21 @@ Double All Elements
     Create a new array where each element is double the value of the original array.
 
     
+
+
+Detyrë shtëpie: Ti krijoni dy arrays , një për çift , një për tek, dhe të jepni një numër të rëndomt n, dhe më pas prej te numri 0 deri te numri n, numrat tek ti vendosni tek array-i për numrat tek, dhe ato çift tek ai për numrat çift.
+
+Më pas merni krijoni një funksion 
+mëIMadhSeM, ku merni array-in dhe një vlerë m si parametra. Dhe ti bëni console.log të gjith numrat në array të cilët jan më të mëdhej se numri m.
+Numri m është numër i rëndomt.
+
+Kodi fillestar:
+
+const tekArray = []
+const ciftArray = []
+
+const n = Math.floor(Math.random() * 100)
+console.log("N është: ", n)
+
+const m =Math.floor(Math.random() * 100)
+console.log("N është: ", m)

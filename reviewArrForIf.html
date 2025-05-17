@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    const nota = [5 , 3 , 4 , 2 , 1 , 5 , 5, 3 , 3 , 2 , 2 ,5, 5 ,5 ,5];
+    const nota2 = [5 , 5, 5 , 5 ,5]
+    const arrLength = nota2.length;
+    // Mesatern = vlerenTotale / gjatsin e elementeve
+    let totali = 0;
+
+    for (let i=0;i<arrLength;i++) {
+        totali += nota2[i];
+    }
+
+    // const mesatarja = totali / arrLength;
+    // console.log(mesatarja);
+    
+    const array = [1 , 5, 3 , 4 , 7, 10, 2, -2];
+    let max = array[0];
+    let min = array[0];
+
+    for (let i =0;i<array.length;i++) {
+
+        if (max < array[i]) {
+            max = array[i];
+        }   
+
+        if (array[i] < min) {
+            min = array[i];
+        }
+
+    }
+
+    console.log("MAX: " + max);
+    console.log("MIN: " + min);
+    
+
+    const arrayy = ["o", "m", "s"];
+    arrayy[1] = "i";
+
+    console.log(arrayy.join());
+    
+
+
+</script>
+</html>
