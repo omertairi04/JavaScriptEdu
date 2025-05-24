@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    function print() {
+        console.log("Hello");
+    }
+
+    print();
+
+    let lokacioni = "Shkup"
+
+    let person = {
+        _name : "Omer",
+        age : 20,
+        "Eye color" : "Brown",
+        height : 180,
+        print : function () {
+            console.log("Hello from object");
+        },
+        puna : {
+            lokacioni : "Kumanov",
+            puna : "Web Developer",
+            getInfo : function () {
+                console.log("Punoj " + lokacioni + ", " + this.puna);
+                
+            }
+        }
+    }
+
+    // person.puna.getInfo();
+
+    person.age = 21;
+    // console.log(person.age);
+
+    // person.pesha = 72;
+    // console.log(person['pesha']);
+    
+    // person.print();
+
+    // for (key in person.puna) {
+    //     console.log(`${key}: ${person.puna[key]}`);
+    // }
+
+    const qeni = {
+        _name : "Bubi",
+        vitet : 3,
+        lloji : "Pit bull",
+        gjinija : "Mashkull",
+        
+        get info () {
+            return `${this._name} - ${this.vitet} - ${this.gjinija} - ${this.lloji}`
+        },
+
+        get name() {
+            return this._name;
+        },
+        
+        set name(newName) {
+            this._name = newName
+        }
+    }
+
+    console.log(qeni.info);
+
+    qeni.name = "Chop"
+
+    console.log(qeni.info);
+    
+    
+
+
+    /*
+    
+     - object Calculator, 3 vlera: a,b,
+     operator; (+,-,*,/)
+     Krijoni nje metod: operation () 
+     { return a operator b }
+
+
+    */
+
+     let Calculator = {
+        a : null,
+        b : null,
+        operator : "",
+        operation : function () {
+
+
+
+        }
+     }
+
+
+
+</script>
+</html>
