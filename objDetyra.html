@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+/*
+// Input: ["apple", "banana", "apple", "orange", "banana", "apple"]
+// Output: { apple: 3, banana: 2, orange: 1 }
+
+let Items = {
+    apple : 2,
+    banana : 2,
+    orange : 1,
+}
+
+vleraFundit = 2;
+vleraFundit++;
+Items.apple = vleraFundit;
+
+loop(i= arr[0] deri i<arr[arr.length - 1]) {
+
+    Items.arr[i] = 0;
+
+}
+
+*/
+
+// for (key in Items) {
+//     console.log(`${key}: ${Items[key]}`);
+    
+// }
+
+let Items = {
+
+}
+
+let array = ["apple", "banana", "apple", "orange", "banana", "apple"]
+
+
+for (let i=0;i<array.length;i++) {
+
+    let elementiItashem = array[i];
+    
+    if (Items[elementiItashem] >= 1) {
+        
+        let vleraFundit = Items[elementiItashem];
+        vleraFundit++;
+        Items[elementiItashem] = vleraFundit;
+        
+    }else{
+    Items[elementiItashem] = 1;
+    }
+}
+
+// for (key in Items) {
+//     console.log(`${key} : ${Items[key]}`);
+// }
+
+const people = [
+  { name: "Anna", age: 22 },
+  { name: "Bob", age: 17 },
+  { name: "Charlie", age: 30 },
+];
+
+// for (let i=0;i<people.length;i++) {
+
+//     if (people[i].age >= 18) {
+
+//         console.log(people[i].name + " " +people[i].age);
+        
+//     }
+
+// }
+
+
+const products = [
+  { name: "Book", price: 10 },
+  { name: "Pen", price: 2 },
+  { name: "Pencil", price: 1 }
+];
+
+let totali = 0;
+// for (let i=0;i<products.length;i++) {
+//     totali += products[i].price;
+// }
+
+// console.log(totali);
+
+
+let arr = [1, 2, 2, 3, 4, 4, 5]
+let Elements = {
+
+}
+
+for (let i=0;i<arr.length;i++) {
+
+    Elements[arr[i]] = 0;
+
+}
+
+for (key in Elements) {
+    console.log(`${key}`);
+}
+
+</script>
+</html>

@@ -88,16 +88,34 @@
 
     */
 
+
+
      let Calculator = {
         a : null,
         b : null,
         operator : "",
         operation : function () {
+            if (this.operator === "+") {
+                return this.a + this.b;
+            } else if (this.operator === "-") return this.a-this.b;
 
+            else if (this.operator === "*") return this.a*this.b;
+            else return this.a / this.b;
 
 
         }
      }
+
+     console.log("-----------------------------");
+     
+
+     Calculator.a = 60;
+     Calculator.b = 30;
+     Calculator.operator = "/"
+
+     console.log(Calculator.operation());
+     
+
 
 
 
