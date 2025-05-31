@@ -63,7 +63,7 @@ for (let i=0;i<array.length;i++) {
 //     console.log(`${key} : ${Items[key]}`);
 // }
 
-const people = [
+const people1 = [
   { name: "Anna", age: 22 },
   { name: "Bob", age: 17 },
   { name: "Charlie", age: 30 },
@@ -105,9 +105,87 @@ for (let i=0;i<arr.length;i++) {
 
 }
 
-for (key in Elements) {
-    console.log(`${key}`);
+// for (key in Elements) {
+//     console.log(`${key}`);
+// }
+
+let people = [
+  { name: "Alice", age: 17 },
+  { name: "Bob", age: 21 },
+  { name: "Carol", age: 19 }
+];
+/*
+tek filterAdults -> ti printoni objektet qe e kan "age" >= 18
+
+// → filterAdults(people) => [{name: "Bob", age: 21}, {name: "Carol", age: 19}]
+*/
+
+function filterAdults(people) {
+
+    // loop kejt people
+
+       // if (people[i].age >= 18 ) console.log(people[i]) 
+
+
 }
+
+let departments = [
+  { name: "HR", budget: 1000 },
+  { name: "IT", budget: 2500 },
+  { name: "Marketing", budget: 1500 }
+];
+
+function getTotalBudget(departments) {
+
+    let totali = 0;
+
+    for (let i=0;i<departments.length;i++) {
+        totali += departments[i].budget;
+    }
+
+    return totali
+}
+
+let buxhetiTotal = getTotalBudget(departments);
+console.log(buxhetiTotal);
+
+
+
+let tasks = [
+  { id: 1, status: "pending" },
+  { id: 2, status: "completed" },
+  { id: 3, status: "pending" }
+];
+
+function filterByStatus(tasks, status) {
+
+    for (let i=0;i<tasks.length;i++) {
+        
+        if (tasks[i].status === status) {
+            console.log(tasks[i]);
+            
+        }
+
+    }
+
+}
+
+filterByStatus(tasks, "completed");
+/*
+
+
+
+
+// → returns:
+// [
+//   { id: 1, title: "Do laundry", status: "pending" },
+//   { id: 3, title: "Clean room", status: "pending" }
+// ]
+
+
+*/
+
+
 
 </script>
 </html>
