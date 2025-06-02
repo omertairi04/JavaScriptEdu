@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    function countV(string) {
+        let count = 0;
+        for (let i=0;i<string.length;i++) {
+            if (string[i] === "v") count++;
+            else count = count + 2;
+        }
+        return count;
+    }
+    
+    // console.log(countV("vvwvw"));
+
+    function lastAIndex(str) {
+
+        let aIndex = -1;
+
+        for (let i=0;i<str.length;i++) {
+
+            if (str[i] === "a") {
+                aIndex = i;
+            }
+
+        }
+
+        if (aIndex === -1) {
+            return aIndex
+        } else {
+            return aIndex++;
+        }
+
+    }
+    //                      123456789
+    // console.log(lastAIndex("abcdaxayz"));
+    
+    function twoToN(n,m) {
+        return m**n;
+
+        // 2**3 = 2 * 2 * 2  = 8
+    }
+    
+    // console.log(twoToN(3,2));
+
+    function checkIfConnected(a, b) {
+
+        let isConnected = false;
+
+        let aPlusOne = a + 1;
+        let aMinusOne = a - 1;
+        if (aPlusOne === b) isConnected = true;
+        else if (aMinusOne === b) isConnected = true;
+        else if ((a === 1 && b === 10) || ( a===10 && b === 1)) isConnected = true;
+
+
+        return isConnected;
+
+    }
+
+    
+    // console.log(checkIfConnected(10,2));
+
+    function whoWins(x,y) {
+
+        let losingTeam = -1;
+        let winningTeam = -1;
+        let wins = false;
+
+        if (x < y) {
+            losingTeam = x;
+            winningTeam = y;
+        }
+        else {
+            losingTeam = y;
+            winningTeam = x;
+        }
+
+        let losingTeamPoints = losingTeam + 3;
+
+        if (losingTeamPoints > winningTeam) wins = true;
+
+        return wins;
+
+
+    }
+
+    console.log(whoWins(15,12));
+    
+    
+
+</script>
+</html>
