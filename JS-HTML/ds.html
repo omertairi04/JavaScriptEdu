@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <p class="demo1" id="demo"></p>
+
+  <h1 id="emri-im"></h1>
+  <!-- <p class="demo1" id="demo">Hello World</p> -->
+
+  <!-- <h2>Un jam nga <span id="vendi"></span></h2> -->
+
+</body>
+<script>
+
+
+  // let demo = document.getElementById("demo");
+  // demo.innerHTML = "Hello World!";
+
+  // let emriIm = document.getElementById("emri-im");
+  // emriIm.innerHTML = "Omer";
+
+  // const vendi = document.getElementById("vendi");
+  // vendi.innerHTML = "Kumanova"
+
+
+  // const newh1 = document.createElement("h1");
+  // newh1.innerHTML = "new h1";
+
+  // document.body.appendChild(newh1);
+
+  // const paragraf = document.createElement("p")
+  // paragraf.innerHTML = "Paragrafi i ri"
+
+  // document.body.appendChild(paragraf)
+
+
+  // let name = prompt("What's your name?");
+  // alert("Hello, " + name + "!");
+  /*
+
+  1) Merrni emrin permes prompt()
+  2) Merrni mbiemrin permes prompt()
+  3) Krijoni nje h1, me emer mbiemer -> <h1>Omer, Tairi</h1>
+
+  */
+
+  let emri = prompt("Si quheni?")
+  let mbiemri = prompt("Mbiemri juaj")
+
+  const fullName = document.createElement("h1");
+  fullName.innerHTML = emri + "," + mbiemri;
+  document.body.appendChild(fullName)
+
+
+
+</script>
+</html>
