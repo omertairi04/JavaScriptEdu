@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dom1.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="container">
+        <div id="input-fields">
+            <input type="text" id="input-name">
+            <input type="text" id="input-surname">
+            <input type="email" id="input-email">
+            <input type="submit" value="Krijo nje user" onclick="krijoUser()">
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    const name = document.getElementById('name');
+    const surname = document.getElementById('surname');
+ 
+    function krijoUser() {
+        let name = document.getElementById("input-name").value;
+        console.log("NAME: ",name);
+        let surname = document.getElementById("input-surname").value;
+        console.log("SURNAME: ",surname);
+        const email = document.getElementById("input-email").value;
+        console.log("EMAIL: ", email);
+
+        let foundEt = false;
+        let foundTxtAfterEt = false;
+
+        const user = {
+            name : name,
+            surname : surname,
+            email : email
+        }
+
+        /*
+            email[9] = @ -> foundEt = true
+            email[10] = "_" -> foundTxtAfterEt = true
+
+            otairi010@gmail.com -> Valid
+            otairi010
+            otairi010@
+        */
+
+        if (name === "" || surname === "") {
+            alert("Vendosni nje emer ose mbimer")
+        }
+
+        const eNdame = email.split("@");
+
+        if (eNdame.length >= 2 && eNdame[1] != "") {}
+        else alert("EMAILI NUK ESHTE VALID");
+        
+        
+
+    }
+
+    // let n1 = prompt("Vendosni emrin");
+    // let n2 = prompt("Vendosni mbiemrin");
+
+    // while (n1 === "" && n2 === "") {
+    //     n1 = prompt("Emri duhet te jet me shkronja")
+    //     n2 = prompt("Mbiemri duhet te jet me shkronja")
+    // }
+
+    // name.innerHTML = n1;
+    // surname.innerHTML = n2;
+
+
+
+
+
+</script>
+
+</html>
