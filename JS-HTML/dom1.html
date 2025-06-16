@@ -19,61 +19,111 @@
                     <input type="text" placeholder="Input addres" id="input-addr">
                     <input type="text" placeholder="Input phoneNumber" id="input-phoneNumber">
                     <input type="email" placeholder="Input email" id="input-email">
-                    <input type="password" placeholder="Input password" id="input-password">
+                    <input type="text" placeholder="Input password" id="input-password">
+                    <input type="text" placeholder="Confirm password" id="confirm-password">
                     <input type="submit" value="Krijo nje user" onclick="krijoUser()">
                 </div>
             </div>
         </div>
     </div>
+
+    <div>
+        <ul id="created-users">
+
+        </ul>
+    </div>
+
 </body>
 
 <script>
 
-    // const name = document.getElementById('name');
-    // const surname = document.getElementById('surname');
- 
+    const users = []; // []
+    /* [
+    {
+        "name": "ksksdsads",
+        "surname": "om",
+        "email": "o@gmail.com",
+        "address": "asdas",
+        "phoneNum": "213123",
+        "password": "asdsa"
+    },
+    
+    ]
+  */
+
+
+    let created_users = document.getElementById("created-users");
+
+    function shfaqUsers() {
+    created_users.innerHTML = "";
+
+    if (users.length === 0) {
+            const li = document.createElement("li");
+            li.innerHTML = "Nuk egziston asnje user";
+            li.id = "no-users-li";
+            created_users.appendChild(li);
+        } else {
+            for (let i = 0; i < users.length; i++) {
+                const newLi = document.createElement("li");
+                newLi.innerHTML = `${users[i].name}`;
+                created_users.appendChild(newLi);
+            }
+        }
+    }
+
+
+    shfaqUsers();
+
     function krijoUser() {
         let name = document.getElementById("input-name").value;
-        console.log("NAME: ",name);
         let surname = document.getElementById("input-surname").value;
-        console.log("SURNAME: ",surname);
         const email = document.getElementById("input-email").value;
-        console.log("EMAIL: ", email);
+        const address = document.getElementById("input-addr").value;
+        const phoneNum = document.getElementById("input-phoneNumber").value;
+        const inputPass = document.getElementById("input-password").value;
+        const confirmPass = document.getElementById("confirm-password").value;
 
         let foundEt = false;
         let foundTxtAfterEt = false;
 
-        const user = {
-            name : name,
-            surname : surname,
-            email : email
-        }
-
-        /*
-            email[9] = @ -> foundEt = true
-            email[10] = "_" -> foundTxtAfterEt = true
-
-            otairi010@gmail.com -> Valid
-            otairi010
-            otairi010@
-        */
-
-        if (name === "" || surname === "" || email === "") {
-            alert("Vendosni nje emer ose mbimer")
+        if (name === "" || surname === "" || email === "" || address === ""
+            || phoneNum === "" || inputPass === "" || confirmPass === ""
+        ) {
+            alert("Mbushni te gjitha elementet")
             return 0;
         }
 
-        const eNdame = email.split("@"); // arr = ["tairi", "gmail.com"]
-
-        if (eNdame.length >= 2 && eNdame[1] != "") {
-            alert("EMAILI VALID!")
+        if (inputPass != confirmPass) {
+            alert("Passworded nuk jan te njejta");
+            return 0;
         }
-        else alert("EMAILI NUK ESHTE VALID");
-        
-        
 
+        const eNdame = email.split("@"); // eNdame = ["tairi", "gmail.com"]
+
+        if (eNdame.length >= 2 && eNdame[0] != "") {
+            
+            const user = {
+                name : name,
+                surname : surname,
+                email : email,
+                address : address,
+                phoneNum : phoneNum,
+                password : inputPass,
+            }
+            
+            users.push(user)
+            console.log("USER: \n" , JSON.stringify(user, 0,2));
+            
+            shfaqUsers();
+            
+        }
+        else {
+            alert("EMAILI NUK ESHTE VALID");
+            return 0;
+        }
     }
 
+    
 
 
 
