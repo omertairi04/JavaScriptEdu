@@ -1,4 +1,27 @@
 
+#outer-div {
+    margin-top: 200px;
+}
+
 #container {
+    width: 50%;
+    margin: 0 auto;
     text-align: center;
+    background-color: beige;
+    height: 300px;
+}
+
+#container input {
+    font-size: 22px;
+}
+
+#other-fields {
+    display: block;
+}
+
+#other-fields input {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
 }

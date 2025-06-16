@@ -8,21 +8,29 @@
 </head>
 <body>
 
-    <div id="container">
-        <div id="input-fields">
-            <input type="text" id="input-name">
-            <input type="text" id="input-surname">
-            <input type="email" id="input-email">
-            <input type="submit" value="Krijo nje user" onclick="krijoUser()">
+    <div id="outer-div">
+        <div id="container">
+            <div id="input-fields">
+                <div style="display: flex; justify-content: space-around;">
+                    <input type="text" placeholder="Input name" id="input-name">
+                    <input type="text" placeholder="Input surname" id="input-surname">
+                </div>
+                <div id="other-fields">
+                    <input type="text" placeholder="Input addres" id="input-addr">
+                    <input type="text" placeholder="Input phoneNumber" id="input-phoneNumber">
+                    <input type="email" placeholder="Input email" id="input-email">
+                    <input type="password" placeholder="Input password" id="input-password">
+                    <input type="submit" value="Krijo nje user" onclick="krijoUser()">
+                </div>
+            </div>
         </div>
     </div>
-
 </body>
 
 <script>
 
-    const name = document.getElementById('name');
-    const surname = document.getElementById('surname');
+    // const name = document.getElementById('name');
+    // const surname = document.getElementById('surname');
  
     function krijoUser() {
         let name = document.getElementById("input-name").value;
@@ -50,29 +58,21 @@
             otairi010@
         */
 
-        if (name === "" || surname === "") {
+        if (name === "" || surname === "" || email === "") {
             alert("Vendosni nje emer ose mbimer")
+            return 0;
         }
 
-        const eNdame = email.split("@");
+        const eNdame = email.split("@"); // arr = ["tairi", "gmail.com"]
 
-        if (eNdame.length >= 2 && eNdame[1] != "") {}
+        if (eNdame.length >= 2 && eNdame[1] != "") {
+            alert("EMAILI VALID!")
+        }
         else alert("EMAILI NUK ESHTE VALID");
         
         
 
     }
-
-    // let n1 = prompt("Vendosni emrin");
-    // let n2 = prompt("Vendosni mbiemrin");
-
-    // while (n1 === "" && n2 === "") {
-    //     n1 = prompt("Emri duhet te jet me shkronja")
-    //     n2 = prompt("Mbiemri duhet te jet me shkronja")
-    // }
-
-    // name.innerHTML = n1;
-    // surname.innerHTML = n2;
 
 
 
