@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Shto nje film</h1>
+
+    <input type="text" id="emri">
+    <input type="number" id="viti">
+
+    <select id="zhanri">
+        <option value="">Zgjidh zhanrin</option>
+        <option>Aksion</option>
+        <option>Komedi</option>
+        <option>Romancë</option>
+        <option>Dramë</option>
+        <option>Horror</option>
+    </select>
+
+    <div style="display: flex;">
+        <input id="eKamPa" type="checkbox">
+        <p>E kam pare</p>
+    </div>
+
+    <input type="submit" onclick="krijoFilm()" value="Shto">
+
+    <h2>Lista e filmave: </h2>
+    <ul id="list">
+        <!-- <p>Asnje film i shtuar</p> -->
+    </ul>
+
+</body>
+<script>
+
+    function krijoFilm() {
+        const emri = document.getElementById("emri").value;
+        const viti = document.getElementById("viti").value;
+        const zhanri = document.getElementById("zhanri").value;
+        
+        if (emri === "" || viti === "" || zhanri === "") {
+            alert("Plotsoni fushat")
+            return;
+        }
+
+        const eKamPa = document.getElementById("eKamPa")
+        const lista = document.getElementById("list")
+
+        const element = document.createElement("li");
+        let text = emri + " (" + viti + ") " + zhanri;
+        
+        element.innerHTML = text;
+        list.appendChild(element)
+
+    }
+
+
+
+</script>
+</html>

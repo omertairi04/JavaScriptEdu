@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <title>Watchlist e Filmave</title>
+    <style>
+        #mesazhi {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input, select {
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Shto një film në watchlist</h2>
+
+    <input type="text" id="titulli" placeholder="Emri i filmit">
+    <input type="number" id="viti" placeholder="Viti i publikimit">
+    
+    <select id="zhanri">
+        <option value="">Zgjidh zhanrin</option>
+        <option>Aksion</option>
+        <option>Komedi</option>
+        <option>Romancë</option>
+        <option>Dramë</option>
+        <option>Horror</option>
+    </select>
+
+    <label style="display: flex;">
+        <input type="checkbox" id="pare"> E kam parë
+    </label>
+    <br><br>
+
+    <button onclick="shtoFilm()">Shto</button>
+
+    <h3>Lista e filmave:</h3>
+    <p id="paFilma">Asnje film i shtuar</p>
+    <ul id="listaFilmave"></ul>
+
+    <div id="mesazhi"></div>
+
+    <script>
+        function shtoFilm() {
+            const titulli = document.getElementById("titulli").value;
+            const viti = document.getElementById("viti").value;
+            const zhanri = document.getElementById("zhanri").value;
+            const pare = document.getElementById("pare").checked;
+            const mesazhi = document.getElementById("mesazhi");
+            const paFilma = document.getElementById("paFilma");
+
+            if (titulli && viti && zhanri) {
+                const lista = document.getElementById("listaFilmave");
+                const li = document.createElement("li");
+                li.textContent = `${titulli} (${viti}) - ${zhanri} - ${pare ? "✅ E kam parë" : "❌ Nuk e kam parë"}`;
+                lista.appendChild(li);
+
+                paFilma.style.display = 'none'
+
+                mesazhi.textContent = "Filmi u shtua me sukses!";
+                mesazhi.style.color = "green";
+
+                // Pastro fushat
+                document.getElementById("titulli").value = "";
+                document.getElementById("viti").value = "";
+                document.getElementById("zhanri").value = "";
+                document.getElementById("pare").checked = false;
+            } else {
+                mesazhi.textContent = "Ju lutem plotësoni të gjitha fushat!";
+                mesazhi.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
+
+

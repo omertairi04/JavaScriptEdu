@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <title>Krijo Përdorues</title>
+    <style>
+        #mesazhi {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Krijo një përdorues të ri</h2>
+
+    <input type="text" id="emri" placeholder="Shkruaj emrin">
+    <input type="text" id="mbiemri" placeholder="Shkruaj mbiemrin">
+    <button onclick="krijoPerdorues()">Krijo</button>
+
+    <h3>Lista e përdoruesve të krijuar:</h3>
+    <ul id="listaPerdoruesve"></ul>
+
+    <div id="mesazhi"></div> <!-- Këtu do shfaqet mesazhi jeshil -->
+
+    <script>
+        function krijoPerdorues() {
+            const emri = document.getElementById("emri").value;
+            const mbiemri = document.getElementById("mbiemri").value;
+            const mesazhi = document.getElementById("mesazhi");
+
+            if (emri && mbiemri) {
+                const lista = document.getElementById("listaPerdoruesve");
+                const li = document.createElement("li");
+                li.textContent = emri + " " + mbiemri;
+                lista.appendChild(li);
+
+                mesazhi.textContent = "Përdoruesi u shtua me sukses!";
+                mesazhi.style.color = "green";
+
+                document.getElementById("emri").value = "";
+                document.getElementById("mbiemri").value = "";
+            } else {
+                mesazhi.textContent = "Ju lutem plotësoni të gjitha fushat!";
+                mesazhi.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

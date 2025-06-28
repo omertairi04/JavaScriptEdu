@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detyrë - Krijimi i një përdoruesi të thjeshtë</title>
+</head>
+<body>
+
+    <h2>Krijo një përdorues të ri</h2>
+
+    <div>
+        <input type="text" placeholder="Shkruaj emrin" id="input-name">
+        <input type="text" placeholder="Shkruaj mbiemrin" id="input-surname">
+    </div>
+
+    <div>
+        <input type="text" placeholder="Shkruani passwordin" id="password">
+        <input type="text" placeholder="Ri-shkruani passwordin" id="confirm-password">
+    </div>
+
+    <button onclick="krijoUser()">Krijo</button>
+
+    <h3>Lista e përdoruesve të krijuar:</h3>
+    <ul id="lista-perdoruesve">
+        <!-- Këtu do të shtohen emrat -->
+    </ul>
+
+    <p id="mesazhi-suksesit" style="color: green;"></p>
+
+</body>
+
+<script>
+
+    const users = []
+
+    function krijoUser() {
+        let emri = document.getElementById("input-name").value;
+        let mbiemri = document.getElementById("input-surname").value;
+        let password = document.getElementById("password").value;
+        let confirmPassword = document.getElementById("confirm-password").value;
+
+        let mesazhi = document.getElementById("mesazhi-suksesit");
+
+        if (emri === "" || mbiemri === "" || password === "" || confirmPassword === "") {
+            alert("Ju lutem plotësoni emrin dhe mbiemrin.");
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Passwordi duhet te jet i njejt")
+            return
+        }
+
+        
+        if (password < 8) {
+            alert("Passwordi duhet te jet me i gjat se 8 shkronja");
+            return;
+        }
+
+        let permbanA = false;
+
+        for (let i=0;i<password.length;i++) {
+            
+            if (password[i] === "A") permbanA = true;
+        }
+
+        if (permbanA === false) {
+            alert("Passwordi duhet te permbaj shkronjen A")
+            return;
+        }
+
+
+
+        const user = {
+            emri: emri,
+            mbiemri:mbiemri,
+            vitet: vitet
+        }
+
+        users.push(user)
+
+        users.forEach(user => {
+            console.log(`${user.emri} - ${user.mbiemri} eshte ${user.vitet} vjeq`);
+            
+        })
+
+        // Shto në listë
+        const li = document.createElement("li");
+        li.innerHTML = emri + " " + mbiemri;
+        document.getElementById("lista-perdoruesve").appendChild(li);
+
+        // Pastro input-at dhe trego mesazh suksesi
+        document.getElementById("input-name").value = "";
+        document.getElementById("input-surname").value = "";
+        mesazhi.innerText = "Përdoruesi u shtua me sukses!";
+    }
+</script>
+
+</html>
