@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter Users by Age</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    input, button { margin: 5px; }
+    .user { margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>User Filter Example</h2>
+
+  <!-- Age Filter Input -->
+  <input type="number" id="ageFilter" placeholder="Enter age to filter">
+  <button onclick="filterUsers()">Filter</button>
+
+  <!-- Result will show here -->
+  <div id="results"></div>
+
+  <script>
+    // Step 1: Sample users array
+    const users = [
+      { name: "Alice", surname: "Smith", age: 25, password: "123" },
+      { name: "Bob", surname: "Johnson", age: 30, password: "abc" },
+      { name: "Charlie", surname: "Lee", age: 25, password: "xyz" }
+    ];
+
+    // Step 2: Filter function
+    function filterUsers() {
+      const ageInput = document.getElementById("ageFilter").value;
+      const resultsDiv = document.getElementById("results");
+
+      // Clear previous results
+      resultsDiv.innerHTML = "";
+
+      // Convert input to number
+      const ageToFilter = parseInt(ageInput);
+
+      // Edge case: input is empty or invalid
+      if (isNaN(ageToFilter)) {
+        resultsDiv.innerHTML = "<p>Please enter a valid age.</p>";
+        return;
+      }
+
+      // Step 3: Filter users by age
+      const filtered = users.filter(user => user.age === ageToFilter);
+
+      // Step 4: Display filtered users
+      if (filtered.length === 0) {
+        resultsDiv.innerHTML = "<p>No users found with that age.</p>";
+        return;
+      }
+
+      filtered.forEach(user => {
+        const userInfo = `<div class="user">Name: ${user.name} ${user.surname}, Age: ${user.age}</div>`;
+        resultsDiv.innerHTML += userInfo;
+      });
+    }
+  </script>
+</body>
+</html>

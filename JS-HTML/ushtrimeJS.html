@@ -12,6 +12,7 @@
     <div>
         <input type="text" placeholder="Shkruaj emrin" id="input-name">
         <input type="text" placeholder="Shkruaj mbiemrin" id="input-surname">
+        <input type="text" placeholder="Shkruaj vitet" id="vitet">
     </div>
 
     <div>
@@ -39,7 +40,7 @@
         let mbiemri = document.getElementById("input-surname").value;
         let password = document.getElementById("password").value;
         let confirmPassword = document.getElementById("confirm-password").value;
-
+        let vitet = document.getElementById("vitet").value;
         let mesazhi = document.getElementById("mesazhi-suksesit");
 
         if (emri === "" || mbiemri === "" || password === "" || confirmPassword === "") {
