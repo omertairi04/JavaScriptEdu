@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="h1Div">
+            <h1>Krijo nje perdorues</h1>
+        </div>
+        <div id="inputs">
+            <div >
+                <input type="text" placeholder="Emri" id="emri">
+                <input type="text" placeholder="Mbiemri" id="mbiemri">
+                <input type="text"placeholder="vitet"id="vitet">
+            </div>
+            <div>
+                <input type="text" placeholder="Password" id="password">
+                <input type="text" placeholder="Retype Password" id="password2">
+            </div>
+            <div id="buttonDiv">
+                <input type="submit" onclick="shtoPerderues()">
+            </div>
+        </div>
+        <br><br>
+        <div id="h2Div">
+            <h2>Lista e perdoresve</h2>
+            <ul id="listUL"></ul>
+            <br><br>
+            <ul id="ulText" style="color: green;"></ul>
+        </div>
+    </div>
+    <br><br><br>
+    <div id="filter" style="display: block;"> 
+        <div>
+            <input type="number" id="filterAge" placeholder="agefilter">
+        </div>
+        <div>
+            <select name="" id="options">
+                <option value="smaller"> < </option>
+                <option value="biger">></option>
+                <option value="equal">==</option>
+
+            </select>
+        </div>
+
+        <div>
+            <button onclick="filtro()">Filter</button>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    const users=[
+
+    ]
+
+        
+    function shtoPerderues(){
+        const emri = document.getElementById("emri").value
+        const mbiemri = document.getElementById("mbiemri").value
+        const password = document.getElementById("password").value
+        const password2 = document.getElementById("password2").value
+        const vitet = document.getElementById("vitet").value
+        const listUl = document.getElementById("listUL")
+        const ulText = document.getElementById("ulText")
+        let foundError = false
+        
+        ulText.innerHTML =""
+        
+        if (emri===""|| mbiemri===""||password===""||password2!==password){
+           foundError=true
+        }
+        if (password.length<8){
+         foundError=true
+        }
+        let foundA = false;
+        for(let i=0;i<password.length;i++){
+            if(password[i]==="A"){
+               foundA = true;
+            }
+
+            
+        
+
+        }
+
+        if (foundA === false) {
+             foundError=true
+        }
+
+        console.log("ERR ", foundError);
+        
+    if (foundError === false){
+
+        const user ={
+            emri:emri,
+            mbiemri:mbiemri,
+            vitet:vitet,
+        }
+        users.push(user)
+        users.forEach(user => {
+            console.log(`${user.emri} - ${user.mbiemri} eshte ${user.vitet} vjeq`);
+        
+        });
+    const elem =document.createElement("li")
+    let text= emri +" "+ mbiemri;
+    elem.innerHTML=text;
+    listUl.appendChild(elem)
+
+    const textt= document.createElement("li")
+    let paragraf="Perderuesi u shtua me sukses!"
+    textt.innerHTML=paragraf
+    ulText.appendChild(textt)
+} else {
+    const textt= document.createElement("li")
+    let paragraf="U gjind ni error"
+    textt.innerHTML=paragraf
+    textt.style.color="red"
+    ulText.appendChild(textt)
+}
+    }
+
+        
+       
+
+    function filtro(){
+         let ageFilter =document.getElementById("filterAge").value
+        let list = document.getElementById("listUL")
+        console.log("here");
+        const select = document.getElementById("options")
+        const selected = select.value
+
+        const filteredUsers=[]
+        console.log(ageFilter);
+        
+        for(let i=0;i<users.length;i++){
+            if(selected==="equal"){
+            if(users[i].vitet===ageFilter){
+                filteredUsers.push(users[i])
+            }
+        } else if (selected==="biger") {
+            if(users[i].vitet>ageFilter){
+                filteredUsers.push(users[i])
+            }
+            else if (selected==="smaller"){
+                if (users[i].vitet<ageFilter){
+                    filteredUsers.push(users[i])
+                }
+            }
+        }
+        }
+        list.innerHTML="";
+        console.log(filteredUsers.length);
+        
+
+        filteredUsers.forEach(user => {
+            console.log("CURRENT USER : ", user);
+            
+            const li=document.createElement("li");
+            li.innerHTML=user.emri+" "+user.mbiemri;
+            list.appendChild(li)
+
+
+            
+        });
+
+    }
+
+        
+</script>
+</html>
