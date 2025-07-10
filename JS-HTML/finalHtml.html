@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+<h1>Krijo perdorues</h1>
+
+    <div class="create-input">
+        <input type="text" placeholder="emri" id="emri">
+        <input type="text" placeholder="mbiemri" id="mbiemri">
+        <input type="text" placeholder="vitet" id="vitet">
+        <input type="text" placeholder="password" id="password">
+        <input type="text" placeholder="confirm-password" id="confirm-password">
+        <select name="" id="color-options">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="black">Black</option>
+        </select>
+        
+        <select name="" id="user-type">
+            <option value="admin">Shef</option>
+            <option value="manager">Manaxher</option>
+            <option value="employee">Puntor</option>
+
+        </select>
+        <button onclick="krijo()">Krijo Perdorues</button>
+    </div>
+
+    <h2>Lista e perdoruesve</h2>
+    <div class="list-user">
+        <div class="admin-div">
+            <h2>Shefat</h2>
+            <ul id="admin-list"></ul>
+        </div>
+        <div class="admin-div">
+            <h2>Menaxherat</h2>
+            <ul id="manager-list"></ul>
+        </div>
+        <div class="admin-div">
+            <h2>Puntort</h2>
+            <ul id="employee-list"></ul>
+        </div>
+        <div class="messages">
+            <p style="display: none;color: green;" 
+            id="success">Perdoruesi u shtua me sukses</p>
+
+            <p style="display: none;color: red;" 
+            id="error-msg">Kishte nje error</p>
+        </div>
+    </div>
+
+    <div>
+        <p>Trego numrin e ngjyrave te selektuara</p>
+        <select name="" id="color-options">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="black">Black</option>
+        </select>
+        <button onclick="numroNgjyrat()">Numro Ngjyrat</button>
+        <p>0</p>
+    </div>
+
+</body>
+<script>
+    // Array to store all users as objects
+    const users = [];
+
+    function krijo() {
+        const emri = document.getElementById('emri').value.trim();
+        const mbiemri = document.getElementById('mbiemri').value.trim();
+        const vitet = document.getElementById('vitet').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        const color = document.getElementById('color-options').value;
+        const userType = document.getElementById('user-type').value;
+
+        const successMsg = document.getElementById('success');
+        const errorMsg = document.getElementById('error-msg');
+
+        // Validation
+        if (!emri || !mbiemri || !vitet || !password || !confirmPassword) {
+            showMessage(errorMsg, "Ju lutem plotesoni te gjitha fushat.");
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            showMessage(errorMsg, "Fjalëkalimet nuk përputhen.");
+            return;
+        }
+
+        if (isNaN(vitet) || Number(vitet) < 0) {
+            showMessage(errorMsg, "Vitet duhet të jenë numër pozitiv.");
+            return;
+        }
+
+        // Create user object
+        const user = {
+            emri,
+            mbiemri,
+            vitet: Number(vitet),
+            password,
+            color,
+            userType
+        };
+
+        // Add user to array
+        users.push(user);
+
+        // Display the user visually
+        appendUserToList(user);
+
+        // Clear form
+        document.querySelectorAll('.create-input input').forEach(input => input.value = '');
+        document.getElementById('color-options').selectedIndex = 0;
+        document.getElementById('user-type').selectedIndex = 0;
+
+        showMessage(successMsg, "Përdoruesi u shtua me sukses!");
+    }
+
+    function appendUserToList(user) {
+        const listId = `${user.userType}-list`;
+        const listElement = document.getElementById(listId);
+
+        const listItem = document.createElement('li');
+        listItem.textContent = `${user.emri} ${user.mbiemri} - ${user.vitet} vjeç`;
+        listItem.style.color = user.color;
+
+        listElement.appendChild(listItem);
+    }
+
+    function showMessage(element, message) {
+        document.getElementById('success').style.display = 'none';
+        document.getElementById('error-msg').style.display = 'none';
+
+        element.textContent = message;
+        element.style.display = 'block';
+
+        setTimeout(() => {
+            element.style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</html>

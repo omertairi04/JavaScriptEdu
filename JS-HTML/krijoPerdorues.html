@@ -28,7 +28,29 @@
         <div id="h2Div">
             <h2>Lista e perdoresve</h2>
             <ul id="listUL"></ul>
-            <br><br>
+            <br><br<h1>Krijo perdorues</h1>
+
+    <div class="create-input">
+        <input type="text" placeholder="emri" id="emri">
+        <input type="text" placeholder="mbiemri" id="mbiemri">
+        <input type="text" placeholder="vitet" id="vitet">
+        <input type="text" placeholder="password" id="password">
+        <input type="text" placeholder="confirm-password" id="confirm-password">
+        <button onclick="krijo()">Krijo Perdorues</button>
+    </div>
+
+    <h2>Lista e perdoruesve</h2>
+    <div class="list-user">
+        <ul id="list"></ul>
+    
+        <div class="messages">
+            <p style="display: none;color: green;" 
+            id="success">Perdoruesi u shtua me sukses</p>
+
+            <p style="display: none;color: red;" 
+            id="error-msg">Kishte nje error</p>
+        </div>
+    </div>>
             <ul id="ulText" style="color: green;"></ul>
         </div>
     </div>
@@ -37,6 +59,7 @@
         <div>
             <input type="number" id="filterAge" placeholder="agefilter">
         </div>
+
         <div>
             <select name="" id="options">
                 <option value="smaller"> < </option>
@@ -128,7 +151,7 @@
        
 
     function filtro(){
-         let ageFilter =document.getElementById("filterAge").value
+        let ageFilter =document.getElementById("filterAge").value
         let list = document.getElementById("listUL")
         console.log("here");
         const select = document.getElementById("options")

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Krijo perdorues</h1>
+
+    <div class="create-input">
+        <input type="text" placeholder="emri" id="emri">
+        <input type="text" placeholder="mbiemri" id="mbiemri">
+        <input type="text" placeholder="vitet" id="vitet">
+        <input type="text" placeholder="password" id="password">
+        <input type="text" placeholder="confirm-password" id="confirm-password">
+        <button onclick="krijo()">Krijo Perdorues</button>
+    </div>
+
+    <h2>Lista e perdoruesve</h2>
+    <div class="list-user">
+        <ul id="list"></ul>
+    
+        <div class="messages">
+            <p style="display: none;color: green;" 
+            id="success">Perdoruesi u shtua me sukses</p>
+
+            <p style="display: none;color: red;" 
+            id="error-msg">Kishte nje error</p>
+        </div>
+    </div>
+
+
+    <div class="filtro">
+        <input type="number" id="numToFilter" placeholder="filtro sipas numrit">
+        <input type="submit" onclick="filtro()" value="Filtro">
+    </div>
+    
+</body>
+<script>
+
+    const users = [];
+
+    function krijo() {
+        
+        const emri = document.getElementById("emri").value
+        const mbiemri = document.getElementById("mbiemri").value
+        const vitet = document.getElementById("vitet").value
+        const password = document.getElementById("password").value
+        const confirmPassword = document.getElementById("confirm-password").value
+        
+        const succesMsg = document.getElementById("success")
+        const errorMsg = document.getElementById("error-msg")
+
+        let kishteError = false;
+
+        if (emri==="" || mbiemri==="" || vitet==="" 
+        || password ==="" || confirmPassword==="") {
+            kishteError = true
+        }
+
+        if (password !== confirmPassword) {
+            kishteError = true
+        }
+
+        if (password.length < 8) {
+            kishteError = true
+        }
+
+        let Aegziston = false;
+
+        for (let i=0;i<password.length;i++) {
+
+            if (password[i] === "A") {
+                Aegziston = true
+            }
+
+        }
+
+        if (Aegziston === false) {
+            kishteError = true
+        }
+
+        if (kishteError === true) {
+            succesMsg.style.display = "none"
+            errorMsg.style.display = "block"
+        } else {
+
+            const user = {
+                emri: emri,
+                mbiemri:mbiemri,
+                vitet:vitet,
+                password:confirmPassword
+            }        
+
+            users.push(user);
+
+            errorMsg.style.display="none"
+            succesMsg.style.display="block"
+
+            const list = document.getElementById("list");
+            const li = document.createElement("li")
+            li.innerHTML = emri + " " + mbiemri + "-" + vitet
+            list.appendChild(li)
+        }
+    }
+
+    function filtro() {
+        const num = document.getElementById("numToFilter").value
+        const usersToShow = []
+        for (let i=0;i<users.length;i++) {
+            if (users[i].vitet === num) {
+                usersToShow.push(users[i])
+            }
+        }
+
+        const list = document.getElementById("list");
+        list.innerHTML = ""
+        // for (let i=0;i<usersToShow.length;i++) {
+            // const li = document.createElement("li")
+            // li.innerHTML = users[i].emri + " " + users[i].mbiemri 
+            // + "-" + users[i].vitet
+            // list.appendChild(li)
+        // }
+
+        usersToShow.forEach(u => {
+            const li = document.createElement("li")
+                li.innerHTML = u.emri + " " + u.mbiemri 
+                + "-" + u.vitet
+            list.appendChild(li)
+        })
+
+    }
+
+
+</script>
+
+</html>
