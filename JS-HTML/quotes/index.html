@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quotes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    h1 {
+      margin-top: 30px;
+      color: #333;
+    }
+    .container {
+      margin-top: 40px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 500px;
+      text-align: center;
+    }
+    #quote-text {
+      font-size: 1.4rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    #quote-author {
+      font-style: italic;
+      color: #777;
+      margin-bottom: 20px;
+    }
+    form {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 300px;
+    }
+    input {
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    button {
+      background: #6200ea;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #4a00b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌟 Random Quotes 🌟</h1>
+
+  <div class="container">
+    <h2 id="quote-text"></h2>
+    <div id="quote-author"></div>
+    <button id="new-quote-btn">Show Another Quote</button>
+  </div>
+
+  <form id="add-form">
+    <h3>Add a new quote</h3>
+    <input type="text" id="new-quote" placeholder="Quote text" required>
+    <input type="text" id="new-author" placeholder="Author" required>
+    <input type="number" id="new-year" placeholder="Year" required>
+    <button type="submit">Add Quote</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
