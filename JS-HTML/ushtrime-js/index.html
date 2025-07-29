@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="kompanija" placeholder="Kompanija">
+    <input type="text" id="modeli" placeholder="Modeli">
+    <input type="number" id="cmimi" placeholder="Cmimi">
+    <input type="number" id="shuma" placeholder="Shuma">
+    <select id="select">
+        <option value="llaptop">Llaptop</option>
+        <option value="telefon">Telefon</option>
+        <option value="monitor">Monitor</option>
+    </select>
+
+    <button onclick="krijoProduct()">Krijo Product</button>
+
+    <br><br><br>
+    <div>
+        <select id="filtroSipas">
+            <option value="llaptop">Llaptopat</option>
+            <option value="telefon">Telefonat</option>
+            <option value="monitor">Monitoraat</option>
+        </select>
+        <button onclick="filtroSipas()">Filtro Sipas</button>
+    </div>
+
+    <div id="container">
+        <div id="llaptop-div">
+            <h2>Llaptopat</h2>
+            <div id="llaptopat"></div>
+        </div>
+
+        <div id="telefon-div">
+            <h2>Telefonat</h2>
+            <div id="telefonat"></div>
+        </div>
+
+        <div id="monitor-div">
+            <h2>Monitorat</h2>
+            <div id="monitorat"></div>
+        </div>
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+</html>
