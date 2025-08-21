@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cinema Ticket System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        text-align: center;
+        padding: 20px;
+      }
+      #balance {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      .seats {
+        display: grid;
+        grid-template-columns: repeat(5, 60px);
+        gap: 10px;
+        justify-content: center;
+      }
+      .seat {
+        width: 60px;
+        height: 60px;
+        background: lightgreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+      .seat.taken {
+        background: lightcoral;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cinema Ticket Booking</h1>
+    <div >Balance: $<span id="balance"></span></div>
+    <div class="seats" id="seats"></div>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

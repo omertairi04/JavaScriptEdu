@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dom1.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dom1.css" />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="outer-div">
-        <div id="container">
-            <div id="input-fields">
-                <div style="display: flex; justify-content: space-around;">
-                    <input type="text" placeholder="Input name" id="input-name">
-                    <input type="text" placeholder="Input surname" id="input-surname">
-                </div>
-                <div id="other-fields">
-                    <input type="text" placeholder="Input addres" id="input-addr">
-                    <input type="text" placeholder="Input phoneNumber" id="input-phoneNumber">
-                    <input type="email" placeholder="Input email" id="input-email">
-                    <input type="text" placeholder="Input password" id="input-password">
-                    <input type="text" placeholder="Confirm password" id="confirm-password">
-                    <input type="submit" value="Krijo nje user" onclick="krijoUser()">
-                </div>
-            </div>
+      <div id="container">
+        <div id="input-fields">
+          <div style="display: flex; justify-content: space-around">
+            <input type="text" placeholder="Input name" id="input-name" />
+            <input type="text" placeholder="Input surname" id="input-surname" />
+          </div>
+          <div id="other-fields">
+            <input type="text" placeholder="Input addres" id="input-addr" />
+            <input
+              type="text"
+              placeholder="Input phoneNumber"
+              id="input-phoneNumber"
+            />
+            <input type="email" placeholder="Input email" id="input-email" />
+            <input
+              type="text"
+              placeholder="Input password"
+              id="input-password"
+            />
+            <input
+              type="text"
+              placeholder="Confirm password"
+              id="confirm-password"
+            />
+            <input type="submit" value="Krijo nje user" onclick="krijoUser()" />
+          </div>
         </div>
+      </div>
     </div>
 
     <div>
-        <ul id="created-users">
-
-        </ul>
+      <ul id="created-users"></ul>
     </div>
+  </body>
 
-</body>
-
-<script>
-
+  <script>
     const users = []; // []
     /* [
     {
@@ -51,83 +58,77 @@
     ]
   */
 
-
     let created_users = document.getElementById("created-users");
 
     function shfaqUsers() {
-    created_users.innerHTML = "";
+      created_users.innerHTML = "";
 
-    if (users.length === 0) {
-            const li = document.createElement("li");
-            li.innerHTML = "Nuk egziston asnje user";
-            li.id = "no-users-li";
-            created_users.appendChild(li);
-        } else {
-            for (let i = 0; i < users.length; i++) {
-                const newLi = document.createElement("li");
-                newLi.innerHTML = `${users[i].name}`;
-                created_users.appendChild(newLi);
-            }
+      if (users.length === 0) {
+        const li = document.createElement("li");
+        li.innerHTML = "Nuk egziston asnje user";
+        li.id = "no-users-li";
+        created_users.appendChild(li);
+      } else {
+        for (let i = 0; i < users.length; i++) {
+          const newLi = document.createElement("li");
+          newLi.innerHTML = `${users[i].name}`;
+          created_users.appendChild(newLi);
         }
+      }
     }
-
 
     shfaqUsers();
 
     function krijoUser() {
-        let name = document.getElementById("input-name").value;
-        let surname = document.getElementById("input-surname").value;
-        const email = document.getElementById("input-email").value;
-        const address = document.getElementById("input-addr").value;
-        const phoneNum = document.getElementById("input-phoneNumber").value;
-        const inputPass = document.getElementById("input-password").value;
-        const confirmPass = document.getElementById("confirm-password").value;
+      let name = document.getElementById("input-name").value;
+      let surname = document.getElementById("input-surname").value;
+      const email = document.getElementById("input-email").value;
+      const address = document.getElementById("input-addr").value;
+      const phoneNum = document.getElementById("input-phoneNumber").value;
+      const inputPass = document.getElementById("input-password").value;
+      const confirmPass = document.getElementById("confirm-password").value;
 
-        let foundEt = false;
-        let foundTxtAfterEt = false;
+      let foundEt = false;
+      let foundTxtAfterEt = false;
 
-        if (name === "" || surname === "" || email === "" || address === ""
-            || phoneNum === "" || inputPass === "" || confirmPass === ""
-        ) {
-            alert("Mbushni te gjitha elementet")
-            return 0;
-        }
+      if (
+        name === "" ||
+        surname === "" ||
+        email === "" ||
+        address === "" ||
+        phoneNum === "" ||
+        inputPass === "" ||
+        confirmPass === ""
+      ) {
+        alert("Mbushni te gjitha elementet");
+        return 0;
+      }
 
-        if (inputPass != confirmPass) {
-            alert("Passworded nuk jan te njejta");
-            return 0;
-        }
+      if (inputPass != confirmPass) {
+        alert("Passworded nuk jan te njejta");
+        return 0;
+      }
 
-        const eNdame = email.split("@"); // eNdame = ["tairi", "gmail.com"]
+      const eNdame = email.split("@"); // eNdame = ["tairi", "gmail.com"]
 
-        if (eNdame.length >= 2 && eNdame[0] != "") {
-            
-            const user = {
-                name : name,
-                surname : surname,
-                email : email,
-                address : address,
-                phoneNum : phoneNum,
-                password : inputPass,
-            }
-            
-            users.push(user)
-            console.log("USER: \n" , JSON.stringify(user, 0,2));
-            
-            shfaqUsers();
-            
-        }
-        else {
-            alert("EMAILI NUK ESHTE VALID");
-            return 0;
-        }
+      if (eNdame.length >= 2 && eNdame[0] != "") {
+        const user = {
+          name: name,
+          surname: surname,
+          email: email,
+          address: address,
+          phoneNum: phoneNum,
+          password: inputPass,
+        };
+
+        users.push(user);
+        console.log("USER: \n", JSON.stringify(user, 0, 2));
+
+        shfaqUsers();
+      } else {
+        alert("EMAILI NUK ESHTE VALID");
+        return 0;
+      }
     }
-
-    
-
-
-
-
-</script>
-
+  </script>
 </html>
