@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Information</title>
+  </head>
+  <div class="weather-container">
+    <h1>Weather App</h1>
+    <div class="search-box">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city (e.g. Skopje)"
+      />
+      <button onclick="viewInfo()">Search</button>
+    </div>
+    <div class="weather-result" id="weatherResult">
+      <!-- Weather info will show here -->
+    </div>
+  </div>
+  <script src="script.js"></script>
+</html>
