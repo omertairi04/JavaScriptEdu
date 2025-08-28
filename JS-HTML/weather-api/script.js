@@ -1,7 +1,7 @@
-function viewInfo() {
+async function viewInfo() {
   const city = document.getElementById("cityInput").value;
 
-  getData(city);
+  await getData(city);
 }
 
 async function getData(city) {
@@ -11,7 +11,8 @@ async function getData(city) {
 
   const weatherResult = document.getElementById("weatherResult");
 
-  const data = await fetch(url);
+  // -----
+  const data = await fetch(url); // https://pokeapi.co/api/v2/pokemon/ditto
 
   if (!data.ok) {
     console.log("DATA NUK U MUR ME SUKSES!");
@@ -19,6 +20,8 @@ async function getData(city) {
   }
 
   const response = await data.json();
+
+  // ----
 
   const { latitude, longitude, name, country } = response.results[0];
 
@@ -39,3 +42,10 @@ async function getData(city) {
       <p><strong>Wind Speed:</strong> ${wind} m/s</p>
     `;
 }
+
+
+// funk A () {
+//   await B()
+// }
+
+// async funk B (){}
