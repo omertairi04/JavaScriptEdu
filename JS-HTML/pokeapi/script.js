@@ -15,6 +15,8 @@ async function searchPoke() {
   const request = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
   // console.log("Request: ", request);
 
+  // https://github.com/omertairi04/JavaScriptEdu/tree/main/JS-HTML/pokeapi
+
   if (request.ok === false) {
     alert("Error with request");
     return;
@@ -30,6 +32,9 @@ async function searchPoke() {
     types += data.types[i].type.name;
   }
 
+  if (types === "electric") console.log("electric");
+  
+
   // ability1, ability2, ... , abilityN
   let ability = "";
   for (let i = 0; i < data.abilities.length; i++) {
@@ -43,3 +48,5 @@ async function searchPoke() {
 
   pokemonCard.style.display = "block";
 }
+
+// fire , ice, grass,water,steel,shadow,rock, ground
