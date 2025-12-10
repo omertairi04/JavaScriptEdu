@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Udhëzues për Shkupin — Version i Zgjeruar</title>
+    <style>
+      :root {
+        --dark: #2c3e50;
+        --muted: #6b7280;
+        --card: #ffffff;
+        --accent: #e67e22;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, Arial, sans-serif;
+        background: #f3f4f6;
+        color: #111827;
+        line-height: 1.5;
+      }
+
+      header {
+        background: var(--dark);
+        color: white;
+        padding: 28px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      header p {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        background: #34495e;
+        padding: 10px 12px;
+        flex-wrap: wrap;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .hero {
+        height: 320px;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+          ),
+          url("https://upload.wikimedia.org/wikipedia/commons/5/52/Skopje_Millennium_Cross.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 34px;
+        font-weight: 700;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 28px auto;
+        padding: 0 18px;
+      }
+      .section-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+        border-left: 6px solid var(--dark);
+        padding-left: 12px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--card);
+        padding: 14px;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+      }
+      .card img {
+        width: 100%;
+        border-radius: 8px;
+      }
+      .card h3 {
+        margin: 10px 0 6px;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 20px;
+      }
+      @media (max-width: 900px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .sidebar {
+        background: var(--card);
+        padding: 14px;
+        border-radius: 10px;
+        position: sticky;
+        top: 20px;
+        height: max-content;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+      }
+      .small {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 8px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 18px;
+        text-align: center;
+        margin-top: 28px;
+      }
+
+      .info-list {
+        background: var(--card);
+        padding: 12px;
+        border-radius: 8px;
+      }
+      .info-list li {
+        margin: 8px 0;
+      }
+
+      .map {
+        width: 100%;
+        height: 260px;
+        border-radius: 8px;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Udhëzues për Shkupin — Version i Zgjeruar</h1>
+      <p>Gjithcka qe duhet te dini kur ta vizitoni Shkupin!</p>
+    </header>
+
+    <nav>
+      <a href="#vendet">Vendet</a>
+      <a href="#ushqimi">Ushqimi</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#historiku">Historiku</a>
+      <a href="#praktike">Këshilla</a>
+    </nav>
+
+    <div class="hero">
+      Eksploro Shkupin: Vende, Ushqim, Historik dhe Këshilla
+    </div>
+
+    <div class="container">
+      <section id="vendet">
+        <h2 class="section-title">Vendet Kryesore</h2>
+        <div class="grid">
+          <article class="card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Stone_Bridge%2C_Skopje.jpg"
+              alt="Ura e Gurit"
+            />
+            <h3>Ura e Gurit (Kamen Most)</h3>
+            <p>
+              Ura e famshme mbi lumin Vardar që lidh Sheshin Maqedonia me
+              Çarshinë e Vjetër. E ndërtuar mbi themelet romake dhe ripërtërihet
+              gjatë shekujve.
+            </p>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/70/Skopje_Old_Bazaar.jpg"
+              alt="Çarshia e Vjetër"
+            />
+            <h3>Çarshia e Vjetër</h3>
+            <p>
+              Zonë me rrugica historike, dyqane artizanale, xhami dhe restorante
+              tradicionale. Një vend i shkëlqyer për të provuar ushqim dhe për
+              të blerë suvenire.
+            </p>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/52/Skopje_Millennium_Cross.jpg"
+              alt="Kryqi i Mijëvjeçarit"
+            />
+            <h3>Kryqi i Mijëvjeçarit (Millennium Cross)</h3>
+            <p>
+              Monument i vendosur në mal të Vodnos me pamje panoramike mbi
+              qytetin. Mund të arrihet me gjurmë ose me teleferik.
+            </p>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Skopje_City_Center.jpg"
+              alt="Sheshi Maqedonia"
+            />
+            <h3>Sheshi Maqedonia</h3>
+            <p>
+              Qendra moderne e qytetit me statuja dhe ndërtesa të mëdha — vendi
+              ideal për të filluar njohjen me Shkupin.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ushqimi" style="margin-top: 26px">
+        <h2 class="section-title">Ushqimi Tradicional</h2>
+        <div class="grid">
+          <div class="card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Tav%C4%8De_grav%C4%8De.jpg"
+              alt="Tavce Gravce"
+            />
+            <h3>Tavçe Gravçe</h3>
+            <p>
+              Pjatë tradicionale me fasule të përgatitur ngadalë — shumë e
+              shijshme dhe e ngopshme.
+            </p>
+          </div>
+          <div class="card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Ajvar.jpg"
+              alt="Ajvar"
+            />
+            <h3>Ajvar</h3>
+            <p>
+              Pure specash të pjekur — përdoret si shoqërues për mish dhe bukë.
+            </p>
+          </div>
+          <div class="card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Kebapi_macedonia.jpg"
+              alt="Kebap"
+            />
+            <h3>Kebap / Qebapa</h3>
+            <p>Vera shija e rrugës — e thjeshtë, e shpejtë dhe popullore.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="two-col" style="margin-top: 26px">
+        <main>
+          <section id="historiku">
+            <h2 class="section-title">Pak Historik (e shkurtër)</h2>
+            <p>
+              Shkupi ka një histori shumë të gjatë që daton që nga periudha
+              ilire dhe romake. Gjatë shekujve qyteti u përshtat dhe u zhvillua,
+              duke pasur periudha osmane dhe më pas jugosllave. Shkupi është
+              rindërtuar pas tërmetit të madh të vitit 1963 dhe prej asaj kohe
+              ka pranuar shumë ndryshime arkitekturore.
+            </p>
+
+            <h3 style="margin-top: 14px">Ngjarje dhe Festivale</h3>
+            <ul class="info-list">
+              <li>
+                Festivali i Verës — koncertet dhe ngjarjet kulturore gjatë
+                verës.
+              </li>
+              <li>
+                Ngjarje në Çarshinë e Vjetër — tregje arti dhe festa
+                tradicionale.
+              </li>
+              <li>Panaire lokale dhe shfaqje ushqimore sezoniere.</li>
+            </ul>
+
+            <h3 style="margin-top: 14px">Si të vizitosh (praktikisht)</h3>
+            <ol class="info-list">
+              <li>
+                Përdor metro-në lehtësisht (autobusë dhe linja urbane) — kartat
+                elektronike zbatohen në transportin lokal.
+              </li>
+              <li>
+                Mëngjeset dhe pasditet janë më të mira për fotografi (lehtësi në
+                ndriçim).
+              </li>
+              <li>
+                Provo restorantet e vogla familjare në Çarshi për ushqim
+                autentik.
+              </li>
+            </ol>
+          </section>
+
+          <section id="galeria" style="margin-top: 18px">
+            <h2 class="section-title">Galeria — Foto të Shkupit</h2>
+            <div class="gallery">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Stone_Bridge%2C_Skopje.jpg"
+                alt="Stone Bridge"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/70/Skopje_Old_Bazaar.jpg"
+                alt="Old Bazaar"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/52/Skopje_Millennium_Cross.jpg"
+                alt="Millennium Cross"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/22/Skopje_Panorama.jpg"
+                alt="Panorama"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Skopje_City_Center.jpg"
+                alt="City Center"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Vardar_river_skopje.jpg"
+                alt="Vardar River"
+              />
+            </div>
+          </section>
+
+          <section id="praktike" style="margin-top: 18px">
+            <h2 class="section-title">Këshilla për Nxënësit</h2>
+            <ul>
+              <li>
+                Mund ta kopjoni këtë HTML direkt në një blok "Custom HTML" në
+                WordPress.
+              </li>
+              <li>
+                Për çdo imazh: nëse dëshironi ta ruani lokalisht, shkarkoni dhe
+                ngarkoni te Media Library e WordPress.
+              </li>
+              <li>
+                Për më të vegjlit: hiqni pjesën e "historikut" dhe lëreni vetëm
+                galerinë dhe vendet.
+              </li>
+              <li>
+                Shtoni
+                <code>&lt;!-- NOTE: replace image URL if needed --&gt;</code> në
+                kod nëse doni që nxënësit ta editojnë.
+              </li>
+            </ul>
+          </section>
+        </main>
+
+        <aside class="sidebar">
+          <h4>Informacione të shpejta</h4>
+          <p class="small">
+            Koha e mirë: Prill–Shtator (më e ngrohtë). Gjuhët: maqedonisht dhe
+            shqip në disa zona; anglisht në zona turistike.
+          </p>
+
+          <h4 style="margin-top: 10px">Kontakt & Adresa</h4>
+          <p class="small">
+            Qendra e qytetit: Sheshi Maqedonia, Shkup — përdorni Google Maps për
+            udhëzime.
+          </p>
+
+          <h4 style="margin-top: 10px">Harta</h4>
+          <iframe
+            class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2938.123456789!2d21.431!3d41.996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDU5JzA5LjAiTiAyMcKwMjYnMzIuMCJF!5e0!3m2!1sen!2smk!4v1620000000000"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+          <h4 style="margin-top: 10px">Shënim për mësuesin</h4>
+          <p class="small">
+            Për detyrë: kërkoni që nxënësit të ndryshojnë dy imazhe dhe të
+            shtojnë një paragraf personal rreth vendit që do të vizitojnë.
+          </p>
+        </aside>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 Udhëzues Edukativ — Përgatitur për nxënësit. Kopjoni dhe ngjitni në
+      WordPress.
+    </footer>
+  </body>
+</html>
