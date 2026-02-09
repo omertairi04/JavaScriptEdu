@@ -1,0 +1,66 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: deepskyblue;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav .center-elements {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav .end-elements {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+}
+
+#main-content-img1 img {
+  width: 1000px;
+  height: 670px;
+}
+
+#main-content-img {
+  width: 882px;
+  height: 300px;
+}
+
+#cards-content {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 400px;
+  background-color: darkslategray;
+  height: 500px;
+}
+
+.card-img {
+  height: 200px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.card-body {
+  padding: 5px;
+}
+
+.card-buy-btn {
+  height: 30px;
+  width: 100px;
+  margin-left: 5px;
+  background-color: darkolivegreen;
+}

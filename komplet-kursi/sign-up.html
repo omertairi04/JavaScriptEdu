@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Sign Up</title>
+  </head>
+
+  <style>
+    .main-content-sign-up {
+      width: 40%;
+      margin: 0 auto;
+      background-color: lightblue;
+      margin-top: 200px;
+      padding: 20px;
+    }
+
+    .inputs {
+      display: block;
+    }
+
+    button {
+      height: 40px;
+      width: 150px;
+    }
+  </style>
+
+  <body>
+    <nav>
+      <h2>Shooper</h2>
+
+      <div class="center-elements">
+        <a href="/">Home</a>
+        <a href="/">Products</a>
+        <a href="/">Services</a>
+        <a href="/">About</a>
+        <a href="/">Contact Us</a>
+      </div>
+
+      <div class="end-elements">
+        <a href="sign-up.html">Sign Up</a>
+        <a href="/">Log In</a>
+      </div>
+    </nav>
+
+    <div class="main-content-sign-up">
+      <h1>Welcome to Shopper</h1>
+      <h2>Create an account and shop</h2>
+
+      <div class="inputs">
+        <label>Name</label>
+        <input id="name" type="text" />
+
+        <label>Surname</label>
+        <input id="surname" type="text" />
+        <p></p>
+        <label>E-mail</label>
+        <input id="email" type="email" />
+        <p></p>
+        <label>Password</label>
+        <input id="pass1" type="password" />
+        <label>Confirm Password</label>
+        <input id="pass2" type="password" />
+      </div>
+      <button onclick="createUser()">Create an Account</button>
+      <a href="/">Already have an account</a>
+    </div>
+  </body>
+  <script src="users-script.js"></script>
+</html>
