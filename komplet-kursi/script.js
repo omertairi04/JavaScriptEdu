@@ -103,3 +103,24 @@ function addCard(imageNumber, object) {
 
   cards_content.append(cardClass);
 }
+
+function createProduct() {
+  const pTitle = document.getElementById("title").value;
+  const pPrice = document.getElementById("cmimi").value;
+  const pNumber = document.getElementById("numri-i-produkteve").value;
+  const pFoto = document.getElementById("foto").value;
+
+  const newProductObject = {
+    title: pTitle,
+    price: pPrice,
+    currency: "$",
+    rating: 0.0,
+    rating: 0.0,
+    reviewsCount: 0,
+    soldProducts: 0,
+    inventoryStatus: "Ende ka produkte ne invertar",
+  };
+
+  produktObjects.push(newProductObject);
+  addCard(1, newProductObject)
+}

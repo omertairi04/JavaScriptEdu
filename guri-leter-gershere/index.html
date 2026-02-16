@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #btns {
+      display: flex;
+      width: 50%;
+      justify-content: space-around;
+      margin: 0 auto;
+    }
+
+    #scoreboard {
+      display: flex;
+      width: 30%;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+  </style>
+  <body>
+    <div id="scoreboard">
+      <h1 id="userScore"></h1>
+      <h2>-</h2>
+      <h1 id="computerScore"></h1>
+    </div>
+    <div id="btns">
+      <button onclick="guri()">Guri</button>
+      <button onclick="leter()">Leter</button>
+      <button onclick="gershere()">Gershere</button>
+      <button onclick="reset()">RESET</button>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

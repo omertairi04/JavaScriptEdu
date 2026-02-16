@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #cards-content {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 400px;
+      background-color: darkslategray;
+      height: 500px;
+    }
+
+    .card-img {
+      height: 200px;
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .card-body {
+      padding: 5px;
+    }
+
+    .card-buy-btn {
+      height: 30px;
+      width: 100px;
+      margin-left: 5px;
+      background-color: darkolivegreen;
+    }
+  </style>
+  <body>
+    <div id="searchBar">
+      <input type="text" oninput="searchProducts(this.value)" />
+    </div>
+    <div id="cards-content"></div>
+  </body>
+  <script src="script.js"></script>
+</html>
